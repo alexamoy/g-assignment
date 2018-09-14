@@ -4,6 +4,7 @@ import { fetchToMessages, fetchFromMessages } from './store/messages';
 import { sortByTime } from './util';
 import Navbar from './navbar';
 import Footer from './footer';
+import { Loader, Dimmer } from 'semantic-ui-react';
 
 class Messages extends Component {
   constructor(props) {
@@ -27,7 +28,6 @@ class Messages extends Component {
 
   viewMoreMessages() {
     const currentMessages = this.state.messages;
-    // window.scrollTo(0, document.body.scrollHeight);
     this.setState({ messages: currentMessages - 28 });
   }
 
@@ -44,8 +44,8 @@ class Messages extends Component {
       child.setAttribute('class', 'time-container');
       let p1 = document.createElement('P');
       let p2 = document.createElement('P');
-      const options1 = {weekday: 'long', year: 'numeric', month: 'short', day: 'numeric'};
-      const options2 = {hour: '2-digit', minute: '2-digit'};
+      const options1 = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+      const options2 = { hour: '2-digit', minute: '2-digit' };
       let p1text = document.createTextNode(date.toLocaleDateString('en-us', options1));
       const p2text = document.createTextNode(date.toLocaleTimeString('en-us', options2));
       p1.setAttribute('class', 'first-time');
@@ -81,6 +81,12 @@ class Messages extends Component {
           {
             firstDate &&
             <p className='first-time'>{firstDate.toUTCString()}</p>
+          }
+          {
+            texts.length < 112 &&
+            <Dimmer active inverted>
+              <Loader content='Loading' />
+            </Dimmer>
           }
           {
             texts.map((message, idx) => {
