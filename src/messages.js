@@ -16,10 +16,18 @@ class Messages extends Component {
   async componentDidMount() {
     await this.props.loadToMessages();
     await this.props.loadFromMessages();
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState !== this.state) {
+      document.getElementById(`text${prevState.messages - 3}`).scrollIntoView();
+    }
   }
 
   viewMoreMessages() {
     const currentMessages = this.state.messages;
+    // window.scrollTo(0, document.body.scrollHeight);
     this.setState({ messages: currentMessages - 28 });
   }
 
@@ -92,6 +100,7 @@ class Messages extends Component {
                   );
                 }
               }
+              return (<React.Fragment key={idx}></React.Fragment>);
             })
           }
         </div>
