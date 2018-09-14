@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+::-webkit-scrollbar {display:none;}
+
+.navbar-container {
+  background-color: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid rgba(201, 198, 198, 0.893);
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  top: 0;
+  position: fixed;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2em;
+}
+
+.arrow-icon {
+  color: rgb(67, 149, 226);
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-icon {
+  background-color: rgb(199, 195, 195);
+  border-radius: 50%;
+  height: 2.5em;
+  width: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: .25em;
+  margin-top: .25em;
+}
+
+.info-icon-container {
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  border: 2px solid rgb(67, 149, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-icon {
+  color: rgb(67, 149, 226);
+  margin-right: 0 !important;
+}
+
+.input-container {
+  width: 100vw;
+  height: 6vh;
+  bottom: 0;
+  position: fixed;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+}
+
+.input {
+  height: 4vh;
+  width: 80%;
+}
+.ui.input>input {
+  border-radius: 1rem;
+}
+
+.messages-container {
+  margin-bottom: 10vh;
+}
+
+.to-container {
+  right: .5em;
+  margin: .5em;
+  display: flex;
+  justify-content: flex-end;
+}
+.to-bubble {
+  background-color: rgb(67, 149, 226);
+  max-width: 60%;
+  height: auto;
+  padding: .5em;
+  text-align: left;
+  color: white;
+  font-weight: 100;
+  margin: .5em;
+  border-radius: 1rem;
+}
+
+.from-container {
+  right: .5em;
+  margin: .5em;
+  display: flex;
+  justify-content: flex-start;
+}
+.from-bubble {
+  background-color: rgb(211, 211, 211);
+  max-width: 60%;
+  height: auto;
+  padding: .5em;
+  text-align: left;
+  color: black;
+  font-weight: 100;
+  margin: .5em;
+  border-radius: 1rem;
+}
+
+.load-messages-container {
+  margin-top: 11vh;
+  margin-bottom: .5em;
+}
+
+.load-messages-button {
+  color: rgb(67, 149, 226);
+  border: none;
+  background: none;
+}
+
+.first-time {
+  color: rgb(139, 138, 138);
+  font-weight: 100;
+  margin-bottom: 0;
+  font-size: 80%;
+}
+
+.time-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 1em;
+  margin-left: 1em;
+}
